@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ApptHeroAPI.Common\ApptHeroAPI.Common.csproj" />
+    <ProjectReference Include="..\ApptHeroAPI.Common\ApptHeroAPI.Common.csproj" />
     <ProjectReference Include="..\ApptHeroAPI.Repositories.Abstraction\ApptHeroAPI.Repositories.Abstraction.csproj" />
     <ProjectReference Include="..\ApptHeroAPI.Repositories.Context\ApptHeroAPI.Repositories.Context.csproj" />
     <ProjectReference Include="..\ApptHeroAPI.Services.Abstraction\ApptHeroAPI.Services.Abstraction.csproj" />

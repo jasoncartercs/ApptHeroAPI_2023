@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ApptHeroAPI.Common\ApptHeroAPI.Common.csproj" />
+    <ProjectReference Include="..\ApptHeroAPI.Common\ApptHeroAPI.Common.csproj" />
     <ProjectReference Include="..\ApptHeroAPI.Repositories.Context\ApptHeroAPI.Repositories.Context.csproj" />
   </ItemGroup>
 
