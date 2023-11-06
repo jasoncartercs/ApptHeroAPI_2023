@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+       <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ApptHeroAPI.Common\ApptHeroAPI.Common.csproj" />
+    <ProjectReference Include="..\ApptHeroAPI.Repositories.Context\ApptHeroAPI.Repositories.Context.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ApptHero</title>
+    <link href="../Content/style.min.css" rel="stylesheet" />
+    <link href="../Content/custom.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/4e95f8d0be.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-width: 100%;
+            width: 100% !important;
+            height: 100% !important;
+            color: #d3d3d3;
+        }
+
+        body, table, td, div, p, a {
+            -webkit-font-smoothing: antialiased;
+            text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            line-height: 100%;
+        }
+
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+            border-collapse: collapse !important;
+            border-spacing: 0;
+            font-size: 14px !important;
+        }
+
+        img {
+            border: 0;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+        /* Rounded corners for advanced mail clients only */
+        @media all and (min-width: 560px) {
+            .container {
+                border-radius: 8px;
+                -webkit-border-radius: 8px;
+                -moz-border-radius: 8px;
+                -khtml-border-radius: 8px;
+            }
+        }
+
+        a, a:hover {
+            color: #127DB3;
+        }
+
+        .wrapper {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            display: flex;
+            justify-content: center;
+            /*background-color: #F1DCFF;*/
+            padding-bottom: 50px;
+        }
+
+        .card_flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .main_div {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card_certificate {
+            background-color: #fff;
+            margin-top: -75px;
+            width: 84%;
+            border-radius: 4px;
+        }
+
+        .card_certificate {
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+        }
+
+        .image_one {
+            z-index: 1;
+        }
+
+        #warped {
+            font-size: 48px;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            z-index: 2;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .form_minutes_section {
+            width: 390px;
+            max-width: 100%;
+        }
+
+        .image_section {
+            min-height: 360px;
+            margin-top: -75px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .card_certificate {
+                margin-top: -55px;
+            }
+
+            .image_one {
+                width: 100%;
+            }
+
+            .image_two {
+                width: 100%;
+            }
+
+            .form_minutes_section {
+                width: 320px;
+            }
+        }
+
+
+
+        .image_two {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        .image_three {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        .form_section {
+            width: 100%
+        }
+
+        .form_div div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0px 15px;
+        }
+
+            .form_div div label {
+                width: 40%;
+                text-align: left;
+                font-weight: 700;
+            }
+
+        .form_div input_name {
+            border: none;
+            padding: 15px 15px;
+            border-radius: 4px;
+            width: 60%;
+        }
+
+        .form_div input:focus-visible {
+            outline: 0px;
+        }
+
+        .form_div div:nth-child(odd) {
+            background-color: #F3F4F4;
+        }
+
+        #to, #amount {
+            background-color: transparent !important;
+        }
+
+        h2 {
+            /*color: #893CBD;*/
+        }
+
+        .minute_section {
+            padding-bottom: 20px;
+        }
+
+            .minute_section p {
+                font-size: 18px;
+                margin: 5px;
+            }
+
+        .footer_company_section button {
+            background-color: #812B96;
+            border-radius: 30px;
+            padding: 10px 30px;
+            color: #fff;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .footer_company_section {
+            background-color: #F3F4F4;
+            width: 100%;
+            padding: 20px 0px;
+            border-radius: 4px;
+        }
+
+            .footer_company_section h3 {
+                color: #222222;
+                font-size: 20px;
+            }
+
+        /* print styles */
+        @media print {
+
+            body {
+                margin: 0;
+                color: #000;
+                background-color: #fff;
+            }
+
+            .print_wrapper {
+                border: solid 1px #000000;
+            }
+
+            .form-control {
+                border: 0;
+                padding: 0;
+                overflow: visible;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+            }
+        }
+    </style>
+</head>
+<body topmargin="0" rightmargin="0" bottommargin="0" leftmargin="0" marginwidth="0" marginheight="0" width="100%"
+      style="border-collapse: collapse; border-spacing: 0; margin: 0; padding-top: 20px; width: 100%; height: 100%; -webkit-font-smoothing: antialiased; text-size-adjust: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; line-height: 100%; background-color: #F0F0F0; color: #000000;"
+      bgcolor="#F0F0F0"
+      text="#000000">
+
+    <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; width: 100%;" class="background">
+        <tr>
+            <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;"
+                bgcolor="#F0F0F0">
+                <table border="0" cellpadding="0" cellspacing="0" align="center"
+                       width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0; width: inherit;
+	max-width: 560px;" class="wrapper">
+                </table>
+                <table border="0" cellpadding="0" cellspacing="0" align="center"
+                       bgcolor="#FFFFFF"
+                       width="560" style="color:#d3d3d3;border-collapse: collapse; border-spacing: 0; padding: 0; width: inherit;
+	max-width: 560px;" class="container">
+                    <tr>
+                        <td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%; font-size: 17px; font-weight: 400; line-height: 160%;
+			padding-top: 25px;
+			color: #666a7a;
+			font-family: sans-serif;" class="paragraph">
+                            <table border="0" cellpadding="0" cellspacing="0" align="center"
+                                   width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0; width: inherit;
+	max-width: 560px;" class="wrapper">
+                                <tr>
+                                    <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%;
+			padding-top: 20px;
+			padding-bottom: 20px;">
+                                        <!--src="https://appthero.com/assets/images/cbh.png"-->
+                                        <a target="_blank" style="text-decoration: none;"
+                                           href="#">
+                                            <img border="0" vspace="0" hspace="0"
+                                                 src="##CompanyLogo##"
+                                                 width="300"
+                                                 alt="Logo" title="Logo" style="
+                                     color: #000000;
+                                     font-size: 10px; margin: 0; padding: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;" />
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div class="col-md-12">
+                                <div class="pull-left">
+                                    <address>
+                                        <p class="text-muted m-l-5">
+                                            #CompanyName
+                                            <br />
+                                            #Address
+                                            <br />
+                                            #CityStateZipAddress
+                                        </p>
+                                    </address>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="pull-right m-t-30 text-right">
+                                    <hr>
+                                    <p><b>Subtotal :</b> #PackageSubtotal</p>
+
+                                    <p><b>Tip :</b> #PackageTip</p>
+                                    <hr>
+                                    <p><b>Total :</b> #PackageTotal</p>
+                                </div>
+                                <div class="clearfix"></div>
+                                <hr>
+                                <div class="text-right">
+                                </div>
+                            </div>
+                            <div class="row" style="padding-bottom:10px;padding-top:10px;">
+                                <div class="col-md-12">
+                                    <div class="card card-body printableArea">
+                                        <div class="row">
+
+                                            <div style="font-weight:bold;">
+                                                Gift Certificate #: #CertificateNumber
+                                            </div>
+                                            <div class="pull-right text-right">
+                                                <address>
+                                                    <p>#CertificateNameLabel</p>
+                                                    <!-- <p class="m-t-30"><b>Purchased Date :</b> <i class="fa fa-calendar"></i> #PackagePurchasedDate</p>-->
+                                                </address>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="table-responsive m-t-40" style="clear: both;">
+                                                <table class="table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Description</th>
+
+                                                            <th class="text-right">Total</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>#CertificateInformationLabel</td>
+
+                                                            <td class="text-right"> #PackageSubtotal </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <br /><br />
+                                                <center>Click <a href="#CertificateURL">here</a> to view/print certificate.</center>
+                                                <br /><br />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
